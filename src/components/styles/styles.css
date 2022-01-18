@@ -1,0 +1,99 @@
+.navbar {
+  background-color: #6c68f1;
+}
+
+.navbar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 30px;
+  position: relative;
+}
+
+.navbar-container-title {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.navbar-container-title:hover {
+  color: #f5ef9f;
+  cursor: pointer;
+}
+
+.navbar-container .mode-toggle {
+  width: 50px;
+  height: 25px;
+  background-color: #f7f7f7;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+}
+
+.navbar-container .mode-toggle-btn {
+  width: 23px;
+  height: 23px;
+  background-color: #24232c;
+  border-radius: 50%;
+  margin: 1px 0 0 1px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.navbar-container .mode-toggle.toggle {
+  background-color: #24232c;
+}
+
+.navbar-container .mode-toggle.toggle .mode-toggle-btn {
+  position: absolute;
+  margin-left: 25px;
+  background-color: #f7f7f7;
+}
+
+.navbar-container-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-container-list {
+    visibility: hidden;
+  }
+}
+
+.navbar-container-list-item {
+  padding: 0 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.navbar-container-list-item:hover {
+  color: #f5ef9f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+/*# sourceMappingURL=styles.css.map */
