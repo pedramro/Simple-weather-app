@@ -85,6 +85,116 @@
   color: #f5ef9f;
 }
 
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-form-input {
+  margin: 15px;
+  padding: 10px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  outline: none;
+  border-radius: 5px;
+}
+
+.main-form-btn {
+  height: 2.4rem;
+  margin-top: 1rem;
+  padding: 0 10px;
+  cursor: pointer;
+  background-color: #00cc66;
+  border-radius: 5px;
+  border: none;
+  position: relative;
+}
+
+.main-form-btn:active {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.main-form-btn p {
+  text-decoration: none;
+  z-index: 2;
+  font-weight: 600;
+  position: relative;
+  color: #24232c;
+}
+
+.main-form-btn::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+  border-radius: 5px;
+  width: 0;
+  background-color: #fb4b4e;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.main-form-btn:hover::before {
+  width: 100%;
+}
+
+.main-card {
+  background-color: #92908d;
+  width: 450px;
+  margin-top: 40px;
+  padding: 25px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.main-card:hover {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-card-img {
+  width: 100%;
+}
+
+.main-card-img img {
+  width: 100%;
+}
+
+.main-card .main-list-wrapper {
+  list-style: none;
+}
+
+.main-card .main-list-wrapper-item {
+  margin: 5px 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.main-card .main-list-wrapper-item:hover {
+  color: #f5ef9f;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -93,7 +203,7 @@
 
 .App {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #f7f7f7;
 }
 /*# sourceMappingURL=styles.css.map */
