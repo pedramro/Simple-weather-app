@@ -1,0 +1,24 @@
+@import './colors';
+@import './functions';
+
+.footer{
+    width: 100%;
+    background-color: $black;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 350px;
+        color: $light;
+        & h3:hover, & small:hover {
+            color: $yellow;
+            cursor: default;
+        }
+    }
+
+}
+

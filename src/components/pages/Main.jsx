@@ -5,6 +5,8 @@ import { getLocation } from '../actions/actions'
 
 function Main({getWeather, data}) {
 
+    
+
     function submitHandler(e) {
         e.preventDefault();
         const input = document.getElementById('input');
@@ -25,7 +27,7 @@ function Main({getWeather, data}) {
                 <input className="main-form-input" id="input" type="text" placeholder="Enter Location ..." />
                 <button className="main-form-btn"><p>Get Weather</p></button>
             </form>
-            <Card  />
+            <Card refresh={submitHandler} />
         </div>
     )
 }

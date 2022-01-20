@@ -5,15 +5,19 @@ import { getWeather } from './components/service/Service'
 import Main from './components/pages/Main';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { store } from './index'
+import { addData } from './components/actions/actions'
+import Footer from './components/footer/Footer';
 
 function App() {
 
-  const [state, setState] = useState({})
+  const [state, setState] = useState()
+  
 
-  async function get(){
+  async function get(refresh){
     const { location } = store.getState()
     console.log(location);
     const response = await getWeather.getWeatherByLocation(location)
+    store.dispatch(addData(response.data))
     setState(response.data)
   }
 
@@ -22,9 +26,10 @@ function App() {
     <div className="App">
         <Navbar />
         <Routes>
-          <Route path='/' element={<Main getWeather={get} data={state} />} />
+          <Route path='/' element={<Main getWeather={get} />} />
         </Routes>
     </div>
+        <Footer />
     </BrowserRouter>
   );
 }
