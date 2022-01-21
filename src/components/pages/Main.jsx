@@ -5,14 +5,20 @@ import { getLocation } from '../actions/actions'
 
 function Main({getWeather, data}) {
 
-    
-
     function submitHandler(e) {
         e.preventDefault();
         const input = document.getElementById('input');
-        store.dispatch(getLocation(input.value))
-        getWeather()
-        e.target.reset()
+        if (!input.value) {
+            let error = document.querySelector('.main-error-text');
+            error.textContent = 'Please enter a location!'
+            setTimeout(() => {
+                error.textContent = ''
+            }, 2500)
+        } else {
+            store.dispatch(getLocation(input.value))
+            getWeather()
+            e.target.reset()
+        }
     }
 
     if(!data){
@@ -27,6 +33,9 @@ function Main({getWeather, data}) {
                 <input className="main-form-input" id="input" type="text" placeholder="Enter Location ..." />
                 <button className="main-form-btn"><p>Get Weather</p></button>
             </form>
+            <div className="main-error">
+                <p className="main-error-text"></p>
+            </div>
             <Card refresh={submitHandler} />
         </div>
     )

@@ -101,6 +101,10 @@
           flex-direction: column;
 }
 
+.main-error-text {
+  color: #fb4b4e;
+}
+
 .main-form {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -6,6 +6,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    &-error{
+        &-text{
+            color: $orangeRed;
+        }
+    }
     &-form{
         display: flex;
         &-input{

@@ -10,7 +10,7 @@ function Card({refresh}) {
   },[refresh])
 
   if(!data){
-    return <h1>Please enter your location...</h1>
+    return <h1 style={{marginTop: 150}}>Please enter your location...</h1>
   }
 
   return (

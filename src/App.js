@@ -15,10 +15,13 @@ function App() {
 
   async function get(refresh){
     const { location } = store.getState()
-    console.log(location);
     const response = await getWeather.getWeatherByLocation(location)
-    store.dispatch(addData(response.data))
-    setState(response.data)
+    console.log(response);
+    if (response.status === 200) {
+      console.log('correct');
+      store.dispatch(addData(response.data))
+      setState(response.data)
+    }
   }
 
   return (
