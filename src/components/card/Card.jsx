@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { store } from '../../index'
 
-function Card({refresh}) {
+function Card(refresh) {
 
-  const { data } = store.getState()
+  let { location, data, validation } = store.getState()
   
   useEffect(() => {
-    console.log(data);
-  },[refresh])
+    console.log('card');
+  }, [location])
+
+  if (validation === "not valid") {
+    return <h1 style={{marginTop: 150, color: 'red'}}>Please enter valid location</h1>
+  }
 
   if(!data){
     return <h1 style={{marginTop: 150}}>Please enter your location...</h1>

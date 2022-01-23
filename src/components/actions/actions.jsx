@@ -1,5 +1,6 @@
 export const GET_LOCATION = 'GET_LOCATION';
 export const ADD_DATA = "ADD_DATA";
+export const VALIDATION = 'VALIDATION'
 
 export const getLocation = (location) => {
     return {
@@ -14,3 +15,10 @@ export const addData = (data) => {
         payload: data,
     }
 } 
+
+export const validation = (isValid) => {
+    return {
+        type: VALIDATION,
+        payload: isValid
+    }
+}

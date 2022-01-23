@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../card/Card";
 import { store } from '../../index'
 import { getLocation } from '../actions/actions'
 
 function Main({getWeather, data}) {
+
+    const { location } = store.getState()
+
+    useEffect(() => {
+        console.log('main');
+    }, [location]);
+    
 
     function submitHandler(e) {
         e.preventDefault();
