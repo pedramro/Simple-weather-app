@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './components/styles/styles.css';
 import Navbar from './components/navbar/Navbar';
 import { getWeather } from './components/service/Service'
@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { store } from './index'
 import { addData, validation } from './components/actions/actions'
 import Footer from './components/footer/Footer';
+import Contact from './components/pages/Contact';
+import About from './components/pages/About';
 
 function App() {
 
@@ -27,16 +29,7 @@ function App() {
       store.dispatch(validation('not valid'))
       setState(response.data)
       console.log('invalid');
-
     }
-  }
-
-  function error() {
-    return (
-      <div>
-        <h4>Please enter a valid location</h4>
-      </div>
-    )
   }
 
   return (
@@ -45,6 +38,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Main getWeather={get} />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
         </Routes>
     </div>
         <Footer />

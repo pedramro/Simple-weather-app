@@ -1,0 +1,18 @@
+@import './colors';
+@import './functions';
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    &-text {
+        text-decoration: underline;
+        transition: all 0.3s;
+        cursor: default;
+        &:hover {
+            color: $lime;
+        }
+    }
+}

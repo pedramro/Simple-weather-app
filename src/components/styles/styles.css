@@ -16,12 +16,14 @@
   position: relative;
 }
 
-.navbar-container-title {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.navbar-container-title a {
+  text-decoration: none;
+  color: #24232c;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.navbar-container-title:hover {
+.navbar-container-title a:hover {
   color: #f5ef9f;
   cursor: pointer;
 }
@@ -79,6 +81,17 @@
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.navbar-container-list-item a {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: #24232c;
+}
+
+.navbar-container-list-item a:hover {
+  color: #f5ef9f;
 }
 
 .navbar-container-list-item:hover {
@@ -231,6 +244,60 @@
 .footer-container h3:hover, .footer-container small:hover {
   color: #f5ef9f;
   cursor: default;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  height: 100%;
+}
+
+.contact p {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.contact p:hover {
+  color: #8a0eef;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.about-text {
+  text-decoration: underline;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.about-text:hover {
+  color: #00cc66;
 }
 
 * {
