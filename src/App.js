@@ -32,10 +32,21 @@ function App() {
     }
   }
 
+  function toggle() {
+    let btn = document.querySelector('.mode-toggle');
+    let container = document.querySelector('.App');
+    btn.classList.toggle('toggle')
+    if (btn.classList.contains('toggle')){
+      container.classList.add('night')
+    } else {
+      container.classList.remove('night')
+    }
+  }
+
   return (
     <BrowserRouter>
     <div className="App">
-        <Navbar />
+        <Navbar toggle={toggle} />
         <Routes>
           <Route path='/' element={<Main getWeather={get} />} />
           <Route path='/contact' element={<Contact />} />

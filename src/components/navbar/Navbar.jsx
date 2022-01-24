@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({toggle}) {
+
     return (
         <div className='navbar'>
             <div className='navbar-container'>
                 <h1 className='navbar-container-title'><Link to='/'>Weather App</Link></h1>
-                <div className='mode-toggle toggle'>
+                <div onClick={toggle}  className='mode-toggle toggle'>
                     <div className='mode-toggle-btn'></div>
                 </div>
                 <ul className='navbar-container-list'>
