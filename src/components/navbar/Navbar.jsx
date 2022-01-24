@@ -7,7 +7,7 @@ function Navbar({toggle}) {
         <div className='navbar'>
             <div className='navbar-container'>
                 <h1 className='navbar-container-title'><Link to='/'>Weather App</Link></h1>
-                <div onClick={toggle}  className='mode-toggle toggle'>
+                <div onClick={toggle} className={localStorage.getItem('mode') ? localStorage.getItem('mode') : 'mode-toggle'}>
                     <div className='mode-toggle-btn'></div>
                 </div>
                 <ul className='navbar-container-list'>

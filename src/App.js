@@ -36,16 +36,19 @@ function App() {
     let btn = document.querySelector('.mode-toggle');
     let container = document.querySelector('.App');
     btn.classList.toggle('toggle')
+    localStorage.setItem('mode', btn.classList)
     if (btn.classList.contains('toggle')){
       container.classList.add('night')
+      localStorage.setItem('container-mode', container.classList)
     } else {
       container.classList.remove('night')
+      localStorage.setItem('container-mode', container.classList)
     }
   }
 
   return (
     <BrowserRouter>
-    <div className="App">
+    <div className={localStorage.getItem('container-mode') ? localStorage.getItem('container-mode') : 'App'}>
         <Navbar toggle={toggle} />
         <Routes>
           <Route path='/' element={<Main getWeather={get} />} />
