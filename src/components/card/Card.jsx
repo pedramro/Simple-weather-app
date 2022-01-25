@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { store } from '../../index'
+import { useSelector } from 'react-redux';
 
-function Card(refresh) {
+function Card() {
 
-  let { location, data, validation } = store.getState()
+  const location = useSelector(state => state.location)
+  const data = useSelector(state => state.data)
+  const validation = useSelector(state => state.validation)
   
-  useEffect(() => {
-    console.log('card');
-  }, [location])
+  useEffect(() => {}, [location])
 
   if (validation === "not valid") {
     return <h1 style={{marginTop: 150, color: 'red'}}>Please enter valid location</h1>

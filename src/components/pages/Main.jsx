@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Card from "../card/Card";
 import { store } from '../../index'
 import { getLocation } from '../actions/actions'
+import { useSelector } from "react-redux";
 
 function Main({getWeather, data}) {
 
-    const { location } = store.getState()
-
-    useEffect(() => {
-        console.log('main');
-    }, [location]);
+    const location = useSelector(state => state.location)
     
 
     function submitHandler(e) {

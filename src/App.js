@@ -1,34 +1,30 @@
-import { useState } from 'react';
 import './components/styles/styles.css';
 import Navbar from './components/navbar/Navbar';
 import { getWeather } from './components/service/Service'
 import Main from './components/pages/Main';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { store } from './index'
+import { useDispatch } from 'react-redux'
 import { addData, validation } from './components/actions/actions'
 import Footer from './components/footer/Footer';
 import Contact from './components/pages/Contact';
 import About from './components/pages/About';
+import { connect } from 'react-redux'
 
-function App() {
-
-  const [state, setState] = useState()
+function App(props){
+  
+  const dispatch = useDispatch()
 
   async function get(){
     const { location } = store.getState()
     const response = await getWeather.getWeatherByLocation(location)
       .then(res => {return res})
       .catch(err => {return err})
-    console.log(response);
     if (response.status === 200) {
-      store.dispatch(addData(response.data))
-      store.dispatch(validation('valid'))
-      setState(response.data)
-      console.log('valid');
+      dispatch(addData(response.data))
+      props.valid()
     } else {
-      store.dispatch(validation('not valid'))
-      setState(response.data)
-      console.log('invalid');
+      props.invalid()
     }
   }
 
@@ -61,4 +57,17 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    location: state.location
+  }
+} 
+
+const mapDispatchToProps = dispatch => {
+  return {
+      valid: () => dispatch(validation('valid')),
+      invalid: () => dispatch(validation('not valid'))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
