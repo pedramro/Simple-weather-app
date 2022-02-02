@@ -3,7 +3,46 @@
 
 .navbar{
     background-color: $blue;
+    position: relative;
+    &.collapse {
+        transition: all 0.9s;
+        height: 10rem;
+    }
+    &-container-list-col{
+        display: none;
+        margin-left: 1.5rem;
+        list-style: none;
+        &.collapse{
+            display: block;
+            &-item{
+                padding: 0 15px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: $black;
+                & a {
+                    transition: all 0.3s;
+                    text-decoration: none;
+                    color: $black;
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
+                &:hover {
+                    color: $yellow;
+                }
+            }
+        }
+    }
     &-container{
+        & .bar{
+            display: none;
+            @include tablet {
+                display: inline-block;
+                position: absolute;
+                right: 2rem;
+                cursor: pointer;
+            }
+        }
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -19,15 +58,22 @@
                     cursor: pointer;
                 }
             }
+            @include mobile {
+                font-size: 15px;
+            }
         }
         .mode-toggle{
             width: 50px;
             height: 25px;
             background-color: $light;
             border-radius: 15px;
+            position: absolute;
             cursor: pointer;
             transition: all 0.4s;
             position: relative;
+            @include tablet {
+                right: 4rem;
+            }
             &-btn{
                 width: 23px;
                 height: 23px;
@@ -51,7 +97,7 @@
             align-items: center;
             margin-right: 20px;
             @include tablet {
-                visibility: hidden;
+                display: none;
             }
             &-item{
                 padding: 0 15px;

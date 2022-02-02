@@ -12,6 +12,9 @@
         }
     }
     &-form{
+        @include mobile {
+            flex-direction: column;
+        }
         display: flex;
         &-input{
             margin: 15px;
@@ -29,6 +32,9 @@
             border-radius: 5px;
             border: none;
             position: relative;
+            @include mobile {
+                margin-top: 0;
+            }
             &:active{
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
             }
@@ -57,6 +63,9 @@
         }
     }
     &-card{
+        @include mobile {
+            width: 80%;
+        }
         background-color: rgb(126, 126, 126);
         width: 350px;
         margin-top: 40px;

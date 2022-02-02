@@ -5,6 +5,9 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { allReducers } from './components/reducers/allReducers';
 
+
+
+
 export const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(

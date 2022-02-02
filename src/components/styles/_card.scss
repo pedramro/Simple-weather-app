@@ -1,0 +1,12 @@
+@import './colors';
+@import './functions';
+
+
+
+.error-msg, .first-text{
+    margin-top: 150px;
+    @include mobile {
+        margin-top: 80px;
+        font-size: 15px;
+    }
+}

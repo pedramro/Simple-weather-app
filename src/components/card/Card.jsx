@@ -10,11 +10,11 @@ function Card() {
   useEffect(() => {}, [location])
 
   if (validation === "not valid") {
-    return <h1 style={{marginTop: 150, color: 'red'}}>Please enter valid location</h1>
+    return <h1 className='error-msg'>Please enter valid location</h1>
   }
 
   if(!data){
-    return <h1 style={{marginTop: 150}}>Please enter your location...</h1>
+    return <h1 className='first-text'>Please enter your location...</h1>
   }
 
   return (

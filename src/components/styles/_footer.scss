@@ -6,6 +6,7 @@
     background-color: $black;
     height: 250px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     &-container{
