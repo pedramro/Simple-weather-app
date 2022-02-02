@@ -51,8 +51,8 @@ function App(props){
           <Route path='/contact' element={<Contact />} />
           <Route path='/about' element={<About />} />
         </Routes>
-    </div>
         <Footer />
+    </div>
     </BrowserRouter>
   );
 }

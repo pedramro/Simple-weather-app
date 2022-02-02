@@ -5,6 +5,9 @@
 
 .error-msg, .first-text{
     margin-top: 150px;
+    @include tablet {
+        font-size: 20px;
+    }
     @include mobile {
         margin-top: 80px;
         font-size: 15px;
